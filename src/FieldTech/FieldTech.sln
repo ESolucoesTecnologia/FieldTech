@@ -5,9 +5,11 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FieldTech.Api", "FieldTech.Api\FieldTech.Api.csproj", "{79856C81-26FE-43B4-B33F-1554CD49BC40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldTech.Repository", "FieldTech.Repository\FieldTech.Repository.csproj", "{44BDE1D5-78B4-422A-B073-E4FF86F55A61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FieldTech.Repository", "FieldTech.Repository\FieldTech.Repository.csproj", "{44BDE1D5-78B4-422A-B073-E4FF86F55A61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldTech.CrossCutting", "FieldTech.CrossCutting\FieldTech.CrossCutting.csproj", "{0E0C2F34-783C-446B-804D-0C795A22D01E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FieldTech.CrossCutting", "FieldTech.CrossCutting\FieldTech.CrossCutting.csproj", "{0E0C2F34-783C-446B-804D-0C795A22D01E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldTech.Domain", "FieldTech.Domain\FieldTech.Domain.csproj", "{789BC5D2-745F-4BD0-A435-D3D31FDEBBBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0E0C2F34-783C-446B-804D-0C795A22D01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E0C2F34-783C-446B-804D-0C795A22D01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E0C2F34-783C-446B-804D-0C795A22D01E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789BC5D2-745F-4BD0-A435-D3D31FDEBBBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789BC5D2-745F-4BD0-A435-D3D31FDEBBBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789BC5D2-745F-4BD0-A435-D3D31FDEBBBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789BC5D2-745F-4BD0-A435-D3D31FDEBBBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

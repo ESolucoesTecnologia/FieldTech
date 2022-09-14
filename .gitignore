@@ -9,3 +9,5 @@
 /src/FieldTech/FieldTech.CrossCutting/obj
 /src/FieldTech/FieldTech.Repository/bin/Debug/net6.0
 /src/FieldTech/FieldTech.Repository/obj
+/src/FieldTech/FieldTech.Domain/bin/Debug/net6.0
+/src/FieldTech/FieldTech.Domain/obj

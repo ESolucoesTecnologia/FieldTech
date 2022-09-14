@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FieldTech.CrossCutting\FieldTech.CrossCutting.csproj" />
+    <ProjectReference Include="..\FieldTech.Domain\FieldTech.Domain.csproj" />
   </ItemGroup>
 
 </Project>

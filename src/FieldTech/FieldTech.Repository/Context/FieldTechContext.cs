@@ -14,7 +14,7 @@ namespace FieldTech.Repository.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           // optionsBuilder.UseLazyLoadingProxies();
+            // optionsBuilder.UseLazyLoadingProxies();
             base.OnConfiguring(optionsBuilder);
         }
 
@@ -22,7 +22,10 @@ namespace FieldTech.Repository.Context
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(FieldTechContext).Assembly);
             base.OnModelCreating(modelBuilder);
+
         }
+
+
 
 
     }
