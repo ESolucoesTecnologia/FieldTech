@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FieldTech.Application.Field.Dto;
+using FieldTech.Domain.Field;
 using FieldTech.Domain.Field.Repository;
 
 namespace FieldTech.Application.Field.Service
@@ -16,9 +17,17 @@ namespace FieldTech.Application.Field.Service
              _mapper = mapper;
         }
 
-        public Task<TecnicoOutputDto> Criar(TecnicoInputDto input)
+        public async Task<TecnicoOutputDto> Criar(TecnicoInputDto input)
         {
-            throw new NotImplementedException();
+            var tecnico = _mapper.Map<Tecnico>(input);
+            await _tecnicoRepository.Save(tecnico);
+            return _mapper.Map<TecnicoOutputDto>(tecnico);
+        }
+
+        public async Task<List<TecnicoOutputDto>> ListarTodos(TecnicoInputDto input)
+        {
+            var tecnico = await _tecnicoRepository.GetAll();    
+            return _mapper.Map<List<TecnicoOutputDto>>(tecnico);
         }
     }
 }
