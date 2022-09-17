@@ -1,4 +1,6 @@
 ﻿using FieldTech.CrossCutting.Entity;
+using FieldTech.Domain.Field.Rules;
+using FluentValidation;
 
 namespace FieldTech.Domain.Field
 {
@@ -12,8 +14,9 @@ namespace FieldTech.Domain.Field
         public string EstadoCivil { get; set; }
         public virtual IList<Endereco> EnderecoList { get; set; }
         public virtual IList<Telefone> TelefoneList { get; set; }  
-        public virtual IList<Email> EmailList { get; set; } 
+        public virtual IList<Email> EmailList { get; set; }
 
-
+        public void Validate() =>
+            new TecnicoValidator().ValidateAndThrow(this);
     }
 }

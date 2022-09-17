@@ -11,3 +11,5 @@
 /src/FieldTech/FieldTech.Repository/obj
 /src/FieldTech/FieldTech.Domain/bin/Debug/net6.0
 /src/FieldTech/FieldTech.Domain/obj
+/src/FieldTech/FieldTech.Application/bin/Debug/net6.0
+/src/FieldTech/FieldTech.Application/obj
