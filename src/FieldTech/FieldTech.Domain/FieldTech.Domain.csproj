@@ -14,4 +14,8 @@
     <ProjectReference Include="..\FieldTech.CrossCutting\FieldTech.CrossCutting.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="OrdemServico\ValueObjects\" />
+  </ItemGroup>
+
 </Project>

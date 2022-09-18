@@ -1,9 +1,4 @@
 ﻿using FieldTech.CrossCutting.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FieldTech.Domain.Fornecedor
 {
@@ -16,6 +11,8 @@ namespace FieldTech.Domain.Fornecedor
         public string Estado { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
+        public DateTime Dt_Inclusao { get; set; }
+        public DateTime Dt_Atualizacao { get; set; }
 
 
 

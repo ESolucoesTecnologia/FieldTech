@@ -3,7 +3,6 @@ using FieldTech.Repository.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Data;
-using System.Linq.Expressions;
 
 namespace FieldTech.Repository.Database
 {

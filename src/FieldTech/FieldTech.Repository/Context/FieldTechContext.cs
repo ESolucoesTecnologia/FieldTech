@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FieldTech.Repository.Context
 {
@@ -23,7 +18,25 @@ namespace FieldTech.Repository.Context
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(FieldTechContext).Assembly);
             base.OnModelCreating(modelBuilder);
 
+            var keyProperties = modelBuilder
+                        .Model
+                        .GetEntityTypes()
+                        .SelectMany(e => e.GetProperties())
+                        .Where(p => p.DeclaringEntityType.ClrType.Name == "Dt_Inclusao")
+                        .ToList();
+
+            foreach (var p in keyProperties)
+            {
+                modelBuilder
+                    .Entity(p.DeclaringEntityType.Name)
+                    .Property(p.Name).HasColumnType("datetime").IsRequired();
+            }
+
+
+
+
         }
+
 
 
 
