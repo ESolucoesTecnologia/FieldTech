@@ -24,7 +24,7 @@ namespace FieldTech.Application.Field.Service
             return _mapper.Map<TecnicoOutputDto>(tecnico);
         }
 
-        public async Task<List<TecnicoOutputDto>> ListarTodos(TecnicoInputDto input)
+        public async Task<List<TecnicoOutputDto>> ListarTodos()
         {
             var tecnico = await _tecnicoRepository.GetAll();    
             return _mapper.Map<List<TecnicoOutputDto>>(tecnico);
