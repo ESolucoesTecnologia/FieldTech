@@ -9,45 +9,13 @@ namespace FieldTech.Repository.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseLazyLoadingProxies();
+            optionsBuilder.UseLazyLoadingProxies();
             base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(FieldTechContext).Assembly);
-
-            var keyPropertiesInclusao = modelBuilder
-                        .Model
-                        .GetEntityTypes()
-                        .SelectMany(e => e.GetProperties())
-                        .Where(p => p.DeclaringEntityType.ClrType.Name == "Dt_Inclusao")
-                        .ToList();
-
-            foreach (var p in keyPropertiesInclusao)
-            {
-                modelBuilder
-                    .Entity(p.DeclaringEntityType.Name)
-                    .Property(p.Name).HasColumnType("datetime").IsRequired(true);
-            }
-
-            var keyPropertiesAtualizacao = modelBuilder
-                   .Model
-                   .GetEntityTypes()
-                   .SelectMany(e => e.GetProperties())
-                   .Where(p => p.DeclaringEntityType.ClrType.Name == "Dt_Atualizacao")
-                   .ToList();
-
-            foreach (var p in keyPropertiesAtualizacao)
-            {
-                modelBuilder
-                    .Entity(p.DeclaringEntityType.Name)
-                    .Property(p.Name).HasColumnType("datetime").IsRequired(false);
-            }
-
-
-
-
             base.OnModelCreating(modelBuilder);
         }
 
@@ -58,8 +26,15 @@ namespace FieldTech.Repository.Context
             configurationBuilder
                 .Properties<DateTime>()
                 .HaveColumnType("datetime");
-                
-                
+
+
+            configurationBuilder
+                .Properties<int>()
+                .HaveColumnType("int");
+
+
+
+
 
         }
 

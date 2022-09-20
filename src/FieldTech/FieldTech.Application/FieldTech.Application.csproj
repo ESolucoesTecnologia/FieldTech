@@ -17,8 +17,4 @@
     <ProjectReference Include="..\FieldTech.Domain\FieldTech.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Field\Handler\Command\" />
-  </ItemGroup>
-
 </Project>
