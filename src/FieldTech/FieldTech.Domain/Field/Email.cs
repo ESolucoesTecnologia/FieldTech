@@ -1,4 +1,6 @@
 ﻿using FieldTech.CrossCutting.Entity;
+using FieldTech.Domain.Field.Rules;
+using FluentValidation;
 
 namespace FieldTech.Domain.Field
 {
@@ -8,6 +10,6 @@ namespace FieldTech.Domain.Field
         public DateTime Dt_Inclusao { get; set; }
         public DateTime Dt_Atualizacao { get; set; }
 
-
+    
     }
 }

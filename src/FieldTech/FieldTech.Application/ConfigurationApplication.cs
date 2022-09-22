@@ -1,10 +1,6 @@
 ﻿using FieldTech.Application.Field.Service;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FieldTech.Application
 {
@@ -15,7 +11,7 @@ namespace FieldTech.Application
         {
             services.AddAutoMapper(typeof(Application.ConfigurationApplication).Assembly);
 
-            //services.AddMediatR(typeof(Application.ConfigurationApplication).Assembly);
+            services.AddMediatR(typeof(Application.ConfigurationApplication).Assembly);
 
             services.AddScoped<ITecnicoService, TecnicoService>();
             

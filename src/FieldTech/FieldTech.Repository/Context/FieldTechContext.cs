@@ -32,11 +32,39 @@ namespace FieldTech.Repository.Context
                 .Properties<int>()
                 .HaveColumnType("int");
 
+        }
+
+        public async  override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            foreach(var entry in ChangeTracker.Entries().Where(
+                entry => entry.Entity.GetType().GetProperty("Dt_Inclusao") != null))
+            {
+                if(entry.State == EntityState.Added)
+                {
+                    entry.Property("Dt_Inclusao").CurrentValue = DateTime.Now;
+                    entry.Property("Dt_Atualizacao").CurrentValue = DateTime.Now;
+                }
+                    
 
 
 
+                 if (entry.State == EntityState.Modified)
+                {
+                    //Faz com que a data de cadastro não seja modificada, mesmo ela sendo preenchida por algum objeto de negocio
+                    entry.Property("Dt_Inclusao").IsModified = false;
+
+                    if (entry.Entity.GetType().GetProperty("Dt_Atualizacao") != null)
+                        entry.Property("Dt_Atualizacao").CurrentValue = DateTime.Now;
+
+                }
+            }
+
+            return await base.SaveChangesAsync();
 
         }
+
+
+
 
     }
 }
