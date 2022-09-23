@@ -1,4 +1,5 @@
 ﻿using FieldTech.Application.Field.Service;
+using FieldTech.Application.Fornecedor.Service;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,7 +15,8 @@ namespace FieldTech.Application
             services.AddMediatR(typeof(Application.ConfigurationApplication).Assembly);
 
             services.AddScoped<ITecnicoService, TecnicoService>();
-            
+            services.AddScoped<IFornecedorService, FornecedorService>();
+
 
             return services;
         }
