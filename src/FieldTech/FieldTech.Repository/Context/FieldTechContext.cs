@@ -32,6 +32,10 @@ namespace FieldTech.Repository.Context
                 .Properties<int>()
                 .HaveColumnType("int");
 
+            configurationBuilder
+                .Properties<string>()
+                .HaveColumnType("varchar");
+
         }
 
         public async  override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

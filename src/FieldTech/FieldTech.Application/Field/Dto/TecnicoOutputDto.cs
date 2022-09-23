@@ -9,9 +9,9 @@
         public string Rg { get; set; }
         public string OrgaoEmissor { get; set; }
         public string EstadoCivil { get; set; }
-        public IList<EnderecoOutputDto> EnderecoList { get; set; }
-        public IList<TelefoneOutputDto> TelefoneList { get; set; }
-        public IList<EmailOutputDto> EmailList { get; set; }
+        public IList<EnderecoOutputDto> EnderecoOutputs { get; set; }
+        public IList<TelefoneOutputDto> TelefoneOutputs { get; set; }
+        public IList<EmailOutputDto> EmailOutputs { get; set; }
 
 
 

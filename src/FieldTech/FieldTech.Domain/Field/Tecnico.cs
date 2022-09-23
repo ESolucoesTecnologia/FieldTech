@@ -1,5 +1,6 @@
 ﻿using FieldTech.CrossCutting.Entity;
 using FieldTech.Domain.Field.Rules;
+using FieldTech.Domain.Field.ValueObjects;
 using FluentValidation;
 
 namespace FieldTech.Domain.Field
@@ -8,7 +9,7 @@ namespace FieldTech.Domain.Field
     {
         public string Nome { get; set; }
         public DateTime Dt_Nascimento { get; set; }
-        public string CpfCnpj { get; set; }
+        public CPF CpfCnpj { get; set; }
         public string Rg { get; set; }  
         public string OrgaoEmissor { get; set; }                
         public string EstadoCivil { get; set; }

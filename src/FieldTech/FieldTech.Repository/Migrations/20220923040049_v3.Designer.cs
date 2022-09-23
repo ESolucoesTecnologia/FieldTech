@@ -4,6 +4,7 @@ using FieldTech.Repository.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FieldTech.Repository.Migrations
 {
     [DbContext(typeof(FieldTechContext))]
-    partial class FieldTechContextModelSnapshot : ModelSnapshot
+    [Migration("20220923040049_v3")]
+    partial class v3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,12 +80,7 @@ namespace FieldTech.Repository.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
 
-                    b.Property<Guid?>("TecnicoId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("TecnicoId");
 
                     b.ToTable("Endereco", (string)null);
                 });
@@ -103,6 +100,9 @@ namespace FieldTech.Repository.Migrations
                     b.Property<DateTime>("Dt_Nascimento")
                         .HasColumnType("datetime");
 
+                    b.Property<Guid>("EnderecoId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("EstadoCivil")
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
@@ -121,6 +121,8 @@ namespace FieldTech.Repository.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EnderecoId");
 
                     b.ToTable("Tecnico", (string)null);
                 });
@@ -395,15 +397,14 @@ namespace FieldTech.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FieldTech.Domain.Field.Endereco", b =>
-                {
-                    b.HasOne("FieldTech.Domain.Field.Tecnico", null)
-                        .WithMany("EnderecoList")
-                        .HasForeignKey("TecnicoId");
-                });
-
             modelBuilder.Entity("FieldTech.Domain.Field.Tecnico", b =>
                 {
+                    b.HasOne("FieldTech.Domain.Field.Endereco", "Endereco")
+                        .WithMany()
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.OwnsOne("FieldTech.Domain.Field.ValueObjects.CPF", "CpfCnpj", b1 =>
                         {
                             b1.Property<Guid>("TecnicoId")
@@ -424,6 +425,8 @@ namespace FieldTech.Repository.Migrations
 
                     b.Navigation("CpfCnpj")
                         .IsRequired();
+
+                    b.Navigation("Endereco");
                 });
 
             modelBuilder.Entity("FieldTech.Domain.Field.Telefone", b =>
@@ -469,8 +472,6 @@ namespace FieldTech.Repository.Migrations
             modelBuilder.Entity("FieldTech.Domain.Field.Tecnico", b =>
                 {
                     b.Navigation("EmailList");
-
-                    b.Navigation("EnderecoList");
 
                     b.Navigation("TelefoneList");
                 });

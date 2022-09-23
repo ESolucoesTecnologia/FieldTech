@@ -19,7 +19,9 @@ namespace FieldTech.Repository.Mapping
             builder.Property(x => x.Logradouro).HasColumnType("varchar").HasMaxLength(200).IsRequired(false);
             builder.Property(x => x.Estado).HasColumnType("varchar").HasMaxLength(2).IsRequired(true);
             builder.Property(x => x.Cidade).HasColumnType("varchar").HasMaxLength(100).IsRequired(true);
-            builder.Property(x => x.Complemento).HasColumnType("varchar").HasMaxLength(300).IsRequired(false);            
+            builder.Property(x => x.Complemento).HasColumnType("varchar").HasMaxLength(300).IsRequired(false);
+            
+            
         }
     }
 }
