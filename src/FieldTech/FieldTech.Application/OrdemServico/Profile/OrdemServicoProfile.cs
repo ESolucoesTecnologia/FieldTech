@@ -1,10 +1,5 @@
 ﻿using FieldTech.Application.OrdemServico.Dto;
 using FieldTech.Domain.OrdemServico;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FieldTech.Application.OrdemServico.Profile
 {
@@ -14,6 +9,7 @@ namespace FieldTech.Application.OrdemServico.Profile
         {
             CreateMap<OrdemInputDto, Ordem>()
                 .ForMember(dest => dest.OrdemDetalheList, opt => opt.MapFrom(src => src.OrdemDetalheInputList));
+
                 
             CreateMap<Ordem,OrdemOutputDto>()
                 .ForMember(dest => dest.OrdemDetalheOutputList, opt => opt.MapFrom(src => src.OrdemDetalheList));

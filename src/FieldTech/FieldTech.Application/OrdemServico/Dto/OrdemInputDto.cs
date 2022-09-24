@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FieldTech.Application.OrdemServico.Dto
 {
@@ -17,6 +12,6 @@ namespace FieldTech.Application.OrdemServico.Dto
        DateTime Dt_Acionamento, 
        DateTime Dt_Agendamento,        
        IList<OrdemDetalheInputDto>? OrdemDetalheInputList,
-       [Required(ErrorMessage = "Informe o fornecedor")] Guid Fornecedor
+       [Required(ErrorMessage = "Informe o fornecedor")] Guid FornecedorId
     );
 }

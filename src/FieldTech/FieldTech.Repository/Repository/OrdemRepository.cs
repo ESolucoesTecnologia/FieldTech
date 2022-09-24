@@ -16,7 +16,7 @@ namespace FieldTech.Repository.Repository
         {
 
             return await this.Query.Where(x => x.Id == id)
-                                    .Include(x => x.OrdemDetalheList.Select(p => p.OrdemDetalheTecnicoList))                                   
+                                    .Include("OrdemDetalheList.OrdemDetalheTecnicoList")                                   
                                     .FirstAsync();
                                    
 

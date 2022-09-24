@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FieldTech.Application.OrdemServico.Dto;
+using FieldTech.Domain.Fornecedor.Repository;
 using FieldTech.Domain.OrdemServico;
 using FieldTech.Domain.OrdemServico.Repository;
 
@@ -9,18 +10,22 @@ namespace FieldTech.Application.OrdemServico.Service
     {
 
         private readonly IOrdemRepository _ordemRepository;
+        private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IMapper _mapper;
 
         public OrdemService(IOrdemRepository ordemRepository,
-                            IMapper mapper)
+                            IMapper mapper,
+                            IFornecedorRepository fornecedorRepository)
         {
             _ordemRepository = ordemRepository;
             _mapper = mapper;
+            _fornecedorRepository = fornecedorRepository;
         }
 
         public async Task<OrdemOutputDto> Criar(OrdemInputDto input)
         {
             var ordem = _mapper.Map<Ordem>(input);
+            ordem.Fornecedor =await  _fornecedorRepository.Get((Guid)input.FornecedorId);
             await _ordemRepository.Save(ordem);
             return _mapper.Map<OrdemOutputDto>(ordem);
         }
