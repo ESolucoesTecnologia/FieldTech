@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FieldTech.CrossCutting.Validation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,10 @@ namespace FieldTech.Domain.Field.ValueObjects
         { }
 
         public CPF(string cpf)
-        {
+        {           
+            
             this.Value = cpf ?? throw new ArgumentNullException(nameof(cpf));
+
         }
 
         public string Value { get; set; }
@@ -21,5 +24,7 @@ namespace FieldTech.Domain.Field.ValueObjects
 
 
         private string Format(string value) => Convert.ToInt64(value).ToString(@"000\.000\.000\-00");
+
+        
     }
 }

@@ -14,7 +14,7 @@ namespace FieldTech.Domain.OrdemServico
         public double Qtd_HoraExcedente { get; set; }
         public double Vl_HoraExcedente { get; set; }
         public DateTime Dt_HoraInicioAtividade { get; set; }
-        public DateTime Dt_HoraFimAtividade { get; set; }
+        public DateTime? Dt_HoraFimAtividade { get; set; }
         public DateTime Dt_Inclusao { get; set; }
         public DateTime Dt_Atualizacao { get; set; }
         public virtual Tecnico Tecnico { get; set; } 
