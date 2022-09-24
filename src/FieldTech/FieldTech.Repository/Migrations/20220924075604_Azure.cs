@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FieldTech.Repository.Migrations
 {
-    public partial class initial : Migration
+    public partial class Azure : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,7 +36,7 @@ namespace FieldTech.Repository.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     Dt_Nascimento = table.Column<DateTime>(type: "datetime", nullable: false),
-                    CpfCnpj = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
+                    CpfCnpj = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true),
                     Rg = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     OrgaoEmissor = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     EstadoCivil = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true),
@@ -80,7 +80,7 @@ namespace FieldTech.Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Endereco = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Endereco = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Dt_Inclusao = table.Column<DateTime>(type: "datetime", nullable: false),
                     Dt_Atualizacao = table.Column<DateTime>(type: "datetime", nullable: false),
                     TecnicoId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
@@ -103,7 +103,7 @@ namespace FieldTech.Repository.Migrations
                     Logradouro = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true),
                     Cidade = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Estado = table.Column<string>(type: "varchar(2)", maxLength: 2, nullable: false),
-                    Cep = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Cep = table.Column<string>(type: "varchar", nullable: false),
                     Complemento = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: true),
                     Dt_Inclusao = table.Column<DateTime>(type: "datetime", nullable: false),
                     Dt_Atualizacao = table.Column<DateTime>(type: "datetime", nullable: false),
@@ -154,7 +154,7 @@ namespace FieldTech.Repository.Migrations
                     Qtd_HoraExcedente = table.Column<double>(type: "float", nullable: false),
                     Vl_HoraExcedente = table.Column<double>(type: "float", nullable: false),
                     Dt_HoraInicioAtividade = table.Column<DateTime>(type: "datetime", nullable: false),
-                    Dt_HoraFimAtividade = table.Column<DateTime>(type: "datetime", nullable: false),
+                    Dt_HoraFimAtividade = table.Column<DateTime>(type: "datetime", nullable: true),
                     Dt_Inclusao = table.Column<DateTime>(type: "datetime", nullable: false),
                     Dt_Atualizacao = table.Column<DateTime>(type: "datetime", nullable: false),
                     OrdemId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
@@ -183,7 +183,7 @@ namespace FieldTech.Repository.Migrations
                     Qtd_HoraExcedente = table.Column<double>(type: "float", nullable: false),
                     Vl_HoraExcedente = table.Column<double>(type: "float", nullable: false),
                     Dt_HoraInicioAtividade = table.Column<DateTime>(type: "datetime", nullable: false),
-                    Dt_HoraFimAtividade = table.Column<DateTime>(type: "datetime", nullable: false),
+                    Dt_HoraFimAtividade = table.Column<DateTime>(type: "datetime", nullable: true),
                     Dt_Inclusao = table.Column<DateTime>(type: "datetime", nullable: false),
                     Dt_Atualizacao = table.Column<DateTime>(type: "datetime", nullable: false),
                     TecnicoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),

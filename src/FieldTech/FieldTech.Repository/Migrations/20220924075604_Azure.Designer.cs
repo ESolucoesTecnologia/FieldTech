@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FieldTech.Repository.Migrations
 {
     [DbContext(typeof(FieldTechContext))]
-    [Migration("20220923034500_v2")]
-    partial class v2
+    [Migration("20220924075604_Azure")]
+    partial class Azure
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -269,7 +269,7 @@ namespace FieldTech.Repository.Migrations
                     b.Property<DateTime>("Dt_Atualizacao")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime>("Dt_HoraFimAtividade")
+                    b.Property<DateTime?>("Dt_HoraFimAtividade")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime>("Dt_HoraInicioAtividade")
@@ -321,7 +321,7 @@ namespace FieldTech.Repository.Migrations
                     b.Property<DateTime>("Dt_Atualizacao")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime>("Dt_HoraFimAtividade")
+                    b.Property<DateTime?>("Dt_HoraFimAtividade")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime>("Dt_HoraInicioAtividade")
@@ -382,7 +382,8 @@ namespace FieldTech.Repository.Migrations
 
                             b1.Property<string>("Valor")
                                 .IsRequired()
-                                .HasColumnType("varchar")
+                                .HasMaxLength(100)
+                                .HasColumnType("varchar(100)")
                                 .HasColumnName("Endereco");
 
                             b1.HasKey("EmailId");

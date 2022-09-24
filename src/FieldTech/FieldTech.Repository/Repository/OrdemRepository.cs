@@ -14,12 +14,9 @@ namespace FieldTech.Repository.Repository
 
         public async Task<Ordem> ObterPorId(Guid id)
         {
-
             return await this.Query.Where(x => x.Id == id)
                                     .Include("OrdemDetalheList.OrdemDetalheTecnicoList")                                   
-                                    .FirstAsync();
-                                   
-
+                                    .FirstOrDefaultAsync();                                 
 
         }
 

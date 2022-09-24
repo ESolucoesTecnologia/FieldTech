@@ -25,4 +25,8 @@
     <ProjectReference Include="..\FieldTech.Domain\FieldTech.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
