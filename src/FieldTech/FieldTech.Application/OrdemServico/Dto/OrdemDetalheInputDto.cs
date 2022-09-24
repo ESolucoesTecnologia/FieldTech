@@ -18,8 +18,7 @@ namespace FieldTech.Application.OrdemServico.Dto
         double? Qtd_HoraExcedente ,
         double? Vl_HoraExcedente ,
         [Required(ErrorMessage = "Informe a data de inicio da atividade")] DateTime Dt_HoraInicioAtividade ,
-        DateTime? Dt_HoraFimAtividade,        
-        IList<OrdemDetalheTecnicoInputDto>? OrdemDetalheTecnicoInputList
+        DateTime? Dt_HoraFimAtividade
     );
 
 

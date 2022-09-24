@@ -2,11 +2,6 @@
 using FieldTech.Application.OrdemServico.Dto;
 using FieldTech.Domain.OrdemServico;
 using FieldTech.Domain.OrdemServico.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FieldTech.Application.OrdemServico.Service
 {
@@ -34,6 +29,12 @@ namespace FieldTech.Application.OrdemServico.Service
         {
             var ordem = await _ordemRepository.GetAll();
             return _mapper.Map<List<OrdemOutputDto>>(ordem);
+        }
+
+        public async Task<OrdemOutputDto> ObterOrdem(Guid id)
+        {
+            var ordem = await _ordemRepository.ObterPorId(id);
+            return _mapper.Map<OrdemOutputDto>(ordem);
         }
     }
 }

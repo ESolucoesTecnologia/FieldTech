@@ -13,7 +13,7 @@ namespace FieldTech.Repository.Mapping
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
             builder.OwnsOne(x => x.Endereco, p =>
             {
-                p.Property(e => e.Valor).HasColumnName("Endereco").IsRequired();
+                p.Property(e => e.Valor).HasColumnName("Endereco").HasMaxLength(100).IsRequired();
             });
 
 

@@ -18,6 +18,7 @@ namespace FieldTech.Application
             services.AddScoped<ITecnicoService, TecnicoService>();
             services.AddScoped<IFornecedorService, FornecedorService>();
             services.AddScoped<IOrdemService, OrdemService>();
+            services.AddScoped<IOrdemDetalheService, OrdemDetalheService>();
 
 
 

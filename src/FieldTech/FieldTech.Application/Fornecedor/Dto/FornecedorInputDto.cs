@@ -8,6 +8,7 @@ namespace FieldTech.Application.Fornecedor.Dto
         [Required(ErrorMessage = "Informe nome fornecedor")] string Nome,
         [Required(ErrorMessage = "Informe endereço fornecedor")] string Endereco,
         [Required(ErrorMessage = "Informe cidade fornecedor")] string Cidade,
+        [Required(ErrorMessage = "Informe Estado fornecedor")] string Estado,
         [Required(ErrorMessage = "Informe telefone fornecedor")] string Telefone,
         [Required(ErrorMessage = "Informe e-mail fornecedor")] string Email
 

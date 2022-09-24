@@ -10,6 +10,7 @@ namespace FieldTech.Domain.Field
         public DateTime Dt_Inclusao { get; set; }
         public DateTime Dt_Atualizacao { get; set; }
 
-    
+
+      
     }
 }

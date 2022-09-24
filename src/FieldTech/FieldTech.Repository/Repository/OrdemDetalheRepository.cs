@@ -9,6 +9,7 @@ namespace FieldTech.Repository.Repository
     {
         public OrdemDetalheRepository(FieldTechContext fieldTechContext) : base(fieldTechContext)
         {
-        }
+        }        
+
     }
 }

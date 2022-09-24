@@ -8,5 +8,6 @@ namespace FieldTech.Domain.OrdemServico.Repository
 {
     public interface IOrdemRepository : CrossCutting.Repository.IRepository<Ordem>
     {
+        Task<Ordem> ObterPorId(Guid id);
     }
 }

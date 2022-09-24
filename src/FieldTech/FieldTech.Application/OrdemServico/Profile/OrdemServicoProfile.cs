@@ -19,15 +19,14 @@ namespace FieldTech.Application.OrdemServico.Profile
                 .ForMember(dest => dest.OrdemDetalheOutputList, opt => opt.MapFrom(src => src.OrdemDetalheList));
 
 
-            CreateMap<OrdemDetalheInputDto, OrdemDetalhe>()
-                .ForMember(dest => dest.OrdemDetalheTecnicoList, opt => opt.MapFrom(src => src.OrdemDetalheTecnicoInputList));
+            CreateMap<OrdemDetalheInputDto, OrdemDetalhe>();
 
             CreateMap<OrdemDetalhe, OrdemDetalheOutputDto>()
                 .ForMember(dest => dest.OrdemDetalheTecnicoOutputList, opt => opt.MapFrom(src => src.OrdemDetalheTecnicoList));
 
 
-            CreateMap<OrdemDetalheTecnicoInputDto, OrdemDetalheTecnico>()
-                .ForMember(dest => dest.Tecnico, opt => opt.MapFrom(src => src.tecnicoInputDto));
+            CreateMap<OrdemDetalheTecnicoInputDto, OrdemDetalheTecnico>();
+                
 
             CreateMap<OrdemDetalheTecnico, OrdemDetalheTecnicoOutputDto>()
                 .ForMember(dest => dest.TecnicoOuputDto, opt => opt.MapFrom(src => src.Tecnico));
