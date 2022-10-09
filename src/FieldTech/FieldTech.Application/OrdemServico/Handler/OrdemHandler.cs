@@ -35,5 +35,10 @@ namespace FieldTech.Application.OrdemServico.Handler
             var result = await this._ordemService.ObterOrdem(request.Id);
             return new GetIdOrdemQueryResponse(result);
         }
+
+        //public Task<CreateOrdemDetalheTecnicoCommandResponse> Handle(CreateOrdemDetalheTecnicoCommand request, CancellationToken cancellationToken)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
