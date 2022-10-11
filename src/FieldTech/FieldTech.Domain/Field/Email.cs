@@ -1,6 +1,4 @@
 ﻿using FieldTech.CrossCutting.Entity;
-using FieldTech.Domain.Field.Rules;
-using FluentValidation;
 
 namespace FieldTech.Domain.Field
 {

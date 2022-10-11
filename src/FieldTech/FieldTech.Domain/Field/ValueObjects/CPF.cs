@@ -1,11 +1,4 @@
-﻿using FieldTech.CrossCutting.Validation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FieldTech.Domain.Field.ValueObjects
+﻿namespace FieldTech.Domain.Field.ValueObjects
 {
     public class CPF
     {
