@@ -1,0 +1,17 @@
+body {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family:'Open Sans', sans-serif;
+}
+
+html, body, #root{
+  background-color:#EFEFEF;
+  height: 100%;
+}
+
+
+h1{
+  color:#333;
+}
+
