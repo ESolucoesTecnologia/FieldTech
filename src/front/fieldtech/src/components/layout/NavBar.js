@@ -11,6 +11,7 @@ function NavBar(){
             <Link to="/"><img src={logo} alt="E-Soluções"/></Link>
                <ul className={styles.list} >
                 <li className={styles.item} ><Link to="/">Home</Link></li>
+                <li className={styles.item}><Link to="/field">Field</Link></li>
                 <li className={styles.item}><Link to="/empresa">Empresa</Link></li>
                 <li className={styles.item}><Link to="/contato">Contato</Link></li>
                 </ul>

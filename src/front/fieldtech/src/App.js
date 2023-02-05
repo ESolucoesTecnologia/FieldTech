@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer'
 
 
 import Container from './components/layout/Container'
+import Field from './components/pages/Field'
 
 
 function App() {
@@ -15,10 +16,10 @@ function App() {
   return (
     <Router>
       <NavBar></NavBar>
-      <Container customClass="min-height">
-      
+      <Container customClass="min-height">      
       <Routes>
         <Route exact path="/" element={<Home/>}></Route>
+        <Route path="/field" element={<Field/>}></Route>
         <Route path="/empresa" element={<Empresa/>}></Route>
         <Route path="/contato" element={<Contato/>}></Route>
       </Routes>      
